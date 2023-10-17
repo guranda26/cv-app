@@ -25,13 +25,19 @@
   font-weight: bold;
   margin-right: 20px;
 }
+.timeline-event__title {
+  margin-bottom: 10px;
+}
 
 .timeline-event__details {
   position: relative;
   flex: 1;
   margin: 0 auto;
-  background-color: $borderCol;
-  padding: 20px;
+
+  .info__title,
+  .info__text {
+    margin: 10px 0;
+  }
 }
 .timeline-event__arrow {
   @include dimensions(0, 0);
@@ -44,13 +50,4 @@
   @include dimensions(3px, 100px);
   margin-top: 20px;
   background-color: $headingCol;
-}
-
-.timeline-event__title {
-  font-weight: bold;
-  font-size: $headingFontSize;
-  margin-bottom: 5px;
-}
-.timeline-event__text {
-  color: $eventCol;
 }

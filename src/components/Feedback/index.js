@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "../Button";
+import Info from "../Info";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 const scrollToTop = () => {
@@ -16,7 +17,8 @@ const Feedback = ({ data }) => {
         <div className="feedback__list">
           {data.map((item, index) => (
             <div className="feedback__item" key={index}>
-              <div className="feedback__text">{item.feedback}</div>
+              <Info text={item.feedback} />
+
               <div className="feedback__reporter">
                 <img
                   src={item.reporter.photoUrl}

@@ -1,4 +1,5 @@
 import React from "react";
+import Info from "../Info";
 
 const Timeline = ({ data }) => {
   return (
@@ -12,8 +13,7 @@ const Timeline = ({ data }) => {
                 {event.date} <div className="timeline-event__line"></div>
               </div>
               <div className="timeline-event__details">
-                <div className="timeline-event__title">{event.title}</div>
-                <div className="timeline-event__text">{event.text}</div>
+                <Info title={event.title} text={event.text} />
                 <div className="timeline-event__arrow"></div>
               </div>
             </div>

@@ -1,15 +1,15 @@
-@import "mixin";
-@import "variables";
-@import "function";
-@import "intro-page";
-@import "panel";
-@import "main-page";
-@import "timeline";
-@import "expertise";
-@import "portfolio";
-@import "contact";
-@import "feedback";
-@import "layout";
+@import "./assets/styles/mixin";
+@import "./assets/styles/variables";
+@import "./assets/styles/function";
+@import "./assets/styles/intro-page";
+@import "./assets/styles/panel";
+@import "./assets/styles/main-page";
+@import "./assets/styles/timeline";
+@import "./assets/styles/expertise";
+@import "./assets/styles/portfolio";
+@import "./assets/styles/contact";
+@import "./assets/styles/feedback";
+@import "./assets/styles/layout";
 
 * {
   box-sizing: border-box;

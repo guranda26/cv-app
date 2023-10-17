@@ -3,11 +3,6 @@
 .feedback__item {
   margin-bottom: 40px;
 }
-.feedback__text {
-  font-size: $textFontSize;
-  background-color: $borderCol;
-  padding: 15px;
-}
 
 .feedback__reporter {
   @include flexContainer($align: center);

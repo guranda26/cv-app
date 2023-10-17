@@ -200,12 +200,18 @@
   margin-right: 20px;
 }
 
+.timeline-event__title {
+  margin-bottom: 10px;
+}
+
 .timeline-event__details {
   position: relative;
   flex: 1;
   margin: 0 auto;
-  background-color: #eee;
-  padding: 20px;
+}
+.timeline-event__details .info__title,
+.timeline-event__details .info__text {
+  margin: 10px 0;
 }
 
 .timeline-event__arrow {
@@ -226,16 +232,6 @@
   height: 100px;
   margin-top: 20px;
   background-color: #26c17e;
-}
-
-.timeline-event__title {
-  font-weight: bold;
-  font-size: 16px;
-  margin-bottom: 5px;
-}
-
-.timeline-event__text {
-  color: #667081;
 }
 
 /* 
@@ -266,8 +262,7 @@ Experience section
   justify-self: start;
   align-self: baseline;
 }
-.expertise__info-job,
-.expertise__info-company {
+.expertise__info-job, .expertise__info-company {
   font-weight: 700;
   font-size: 16px;
 }
@@ -359,8 +354,7 @@ Experience section
   flex-wrap: nowrap;
   gap: 20px;
 }
-.contact-list_phone,
-.contact-list__platform {
+.contact-list_phone, .contact-list__platform {
   color: #000;
   font-weight: 700;
 }
@@ -395,12 +389,6 @@ Experience section
 /* Feedback section */
 .feedback__item {
   margin-bottom: 40px;
-}
-
-.feedback__text {
-  font-size: 14px;
-  background-color: #eee;
-  padding: 15px;
 }
 
 .feedback__reporter {
@@ -597,4 +585,4 @@ h2 {
   left: 0;
   margin-left: 25%;
   margin-bottom: 5px;
-} /*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=App.css.map */
