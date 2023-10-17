@@ -11,7 +11,7 @@ import feedbackData from "../components/Feedback/data";
 
 const AllComponents = () => {
   return (
-    <main>
+    <main className="main">
       <section className="main-container">
         <About />
         <Timeline data={eventsData} />

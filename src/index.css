@@ -12,11 +12,24 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.main-container {
-  margin: 0 15px;
-  position: relative;
+/* Photobox */
+.photo-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 25px;
+  margin-bottom: 50px;
 }
 
+.photo-box__name {
+  color: #fff;
+  margin: 0px;
+}
+.photo-box__avatar {
+  width: 100px;
+  height: auto;
+  margin-bottom: 10px;
+}
 /*Intro Page*/
 .intro-page {
   width: 100%;
@@ -41,13 +54,7 @@ body {
   flex-direction: column;
   justify-content: center;
 }
-.intro-page__shadow {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: #00000097;
-  z-index: 0;
-}
+
 .intro-page__content .photo-box {
   margin-bottom: 20px;
 }
@@ -80,7 +87,14 @@ body {
 .intro-page__button {
   text-decoration: none;
 }
-/*Aside*/
+.intro-page__shadow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #00000097;
+  z-index: 0;
+}
+/* Aside */
 
 .aside {
   background-color: #222935;
@@ -88,13 +102,21 @@ body {
   position: relative;
 }
 
+.aside--hidden {
+  display: none;
+}
+
 h1,
 h2 {
+  font-size: 25px;
+  color: #26c17e;
+  line-height: 30px;
+  font-family: "Open Sans", sans-serif;
   margin-bottom: 30px;
   margin-top: 60px;
 }
 
-nav {
+.nav-bar {
   width: 250px;
 }
 
@@ -103,68 +125,11 @@ nav {
   flex-direction: column;
   max-width: 250px;
   gap: 30px;
-  /* background-color: #222935; */
   margin-left: 20px;
 }
-.main-container-button--nav {
-  display: flex;
-  position: absolute;
-  top: 20px;
-  left: 250px;
-  border-radius: 0;
-}
-.main-container-button--left-aligned {
-  position: absolute;
-  top: 20px;
-  border-radius: 0;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-}
 
-nav .button {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-}
-
-.main-container-button--nav .button__icon {
-  font-size: 20px;
-  padding: 0px 3px;
-}
-.aside--hidden {
-  display: none;
-}
-
-/*Contact*/
-.contact-list {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  font-family: "Open Sans";
-  font-size: 16px;
-  color: #222935;
-  display: flex;
-  /* justify-content: center; */
-  /* background-color: #007bff; */
-}
-.contact-list__item p {
-  color: #000;
-  font-weight: 700;
-}
-/* .contact-list__item span {
-  font-weight: 400;
-} */
-
-/* .contact-list__item .contact-list_item .item {
-  font-weight: bold;
-} */
-
-.contact-list_email {
-  font-weight: bold;
-}
-
-ul li {
+.nav-bar__item {
   list-style: none;
-  color: #667081;
 }
 
 .nav-bar__icon {
@@ -181,41 +146,59 @@ ul li {
 .nav-bar__link:hover {
   color: #26c17e;
 }
+.nav-bar .button {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
 
-h1,
-h2 {
-  font-size: 25px;
-  color: #26c17e;
-  line-height: 30px;
-  font-family: "Open Sans", sans-serif;
+/* Main */
+
+.main {
+  margin: 20px;
+  margin-bottom: 0;
+}
+
+.main-container {
+  margin: 0 15px;
+  position: relative;
+}
+.main-container .main-container-button {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0;
+}
+.main-container-button .button {
+  text-align: center;
+  padding: 5px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.main-container-button .button__icon {
+  margin: auto;
+}
+.main-container-button--nav {
+  display: flex;
+  position: absolute;
+  top: 20px;
+  left: 250px;
+  border-radius: 0;
+}
+.main-container-button--nav .button__icon {
+  font-size: 20px;
+  padding: 0px 3px;
+}
+.main-container-button--left-aligned {
+  position: absolute;
+  top: 20px;
+  border-radius: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 .layout-section {
   display: flex;
   position: relative;
-}
-
-main {
-  margin: 20px;
-  margin-bottom: 0;
-}
-
-.photo-box__avatar {
-  width: 100px;
-  height: auto;
-  margin-bottom: 10px;
-}
-.photo-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 25px;
-  margin-bottom: 50px;
-}
-
-.photo-box__name {
-  color: #fff;
-  margin: 0px;
 }
 
 /* About section */
@@ -298,6 +281,12 @@ Experience section
   margin-bottom: 50px;
   position: relative;
 }
+.expertise__date {
+  position: absolute;
+  top: 27px;
+  left: 0;
+  color: #667081;
+}
 .expertise__info {
   display: grid;
   grid-template-columns: 130px 1fr;
@@ -311,23 +300,17 @@ Experience section
   align-self: baseline;
 }
 
-.expertise__info-description {
-  grid-column: 2;
-  margin-top: 5px;
-}
-
 .expertise__info-job,
 .expertise__info-company {
   font-weight: 700;
   font-size: 16px;
 }
 
-.expertise__date {
-  position: absolute;
-  top: 27px;
-  left: 0;
-  color: #667081;
+.expertise__info-description {
+  grid-column: 2;
+  margin-top: 5px;
 }
+
 /* Portfolio section */
 
 .portfolio__container {
@@ -350,6 +333,10 @@ Experience section
   color: #26c17e;
 }
 
+.portfolio__filter .active {
+  color: #26c17e;
+}
+
 .portfolio__items {
   display: flex;
   flex-wrap: wrap;
@@ -365,10 +352,6 @@ Experience section
 
 .portfolio-item__image {
   width: 200px;
-}
-
-.portfolio__filter .active {
-  color: #26c17e;
 }
 
 .portfolio__title,
@@ -395,20 +378,33 @@ Experience section
 
 /*Contact section */
 
-.contact-list__icon-icon {
-  font-size: 25px;
-  color: #26c17e;
-}
-
-.contact-list__icon-image {
-  width: 30px;
-  height: 30px;
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  font-family: "Open Sans";
+  font-size: 16px;
+  color: #222935;
+  display: flex;
 }
 
 .contact-list__item {
   display: flex;
   gap: 20px;
   align-items: center;
+}
+.contact-list_phone,
+.contact-list__platform {
+  color: #000;
+  font-weight: 700;
+}
+
+.contact-list_email {
+  font-weight: bold;
+}
+.contact-list__info {
+  display: inline-block;
+  margin-right: 15px;
 }
 
 .contact-list__icon {
@@ -424,9 +420,15 @@ Experience section
   text-decoration: underline;
 }
 
-.contact-list__info {
-  display: inline-block;
-  margin-right: 15px;
+.contact-list__icon-icon {
+  font-size: 25px;
+  color: #26c17e;
+  margin-right: 5px;
+}
+
+.contact-list__icon-image {
+  width: 30px;
+  height: 30px;
 }
 
 /* Feedback section */
@@ -492,22 +494,6 @@ Experience section
   margin-bottom: 5px;
 }
 
-.main-container-button .button {
-  text-align: center;
-  padding: 5px;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-}
-.main-container .main-container-button {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 0;
-}
-
-.main-container-button .button__icon {
-  margin: auto;
-}
-
 @media only screen and (max-width: 800px) {
   .portfolio__items {
     display: flex;
@@ -526,9 +512,6 @@ Experience section
 }
 
 @media only screen and (max-width: 600px) {
-  /* .intro-page__background-image {
-    object-fit: fill;
-  } */
   .intro-page__content .photo-box .photo-box__description {
     margin: 10px 20px;
   }
@@ -539,17 +522,17 @@ Experience section
   .nav-ul {
     width: 50px;
   }
-  aside .button {
+  .aside .button {
     padding: 5px;
     margin: auto;
     margin-right: 0;
     display: flex;
     justify-content: center;
   }
-  aside .button .button__icon {
+  .aside .button .button__icon {
     margin-right: 0;
   }
-  aside .button__text {
+  .aside .button__text {
     display: none;
   }
   .aside .photo-box .photo-box__avatar {

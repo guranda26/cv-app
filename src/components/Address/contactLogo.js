@@ -63,7 +63,7 @@ const ContactInfo = ({ icon, data, type }) => {
     );
   } else if (type === "phone") {
     content = (
-      <p className="contact-list__icon">
+      <p className="contact-list__icon contact-list_phone">
         <FontAwesomeIcon icon={icon} className="contact-list__icon-icon" />{" "}
         {data}
       </p>
