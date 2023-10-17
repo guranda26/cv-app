@@ -135,7 +135,7 @@ nav .button {
 }
 
 /*Contact*/
-.contact-ul {
+.contact-list {
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -143,22 +143,22 @@ nav .button {
   font-size: 16px;
   color: #222935;
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
+  /* background-color: #007bff; */
 }
-.contact-ul p {
+.contact-list__item p {
   color: #000;
   font-weight: 700;
 }
-.contact-ul span {
+/* .contact-list__item span {
   font-weight: 400;
-}
+} */
 
-.contact-ul .contact-list_item .item {
+/* .contact-list__item .contact-list_item .item {
   font-weight: bold;
-}
+} */
 
-.email,
-.phone {
+.contact-list_email {
   font-weight: bold;
 }
 
@@ -395,65 +395,70 @@ Experience section
 
 /*Contact section */
 
-.contact-icon {
+.contact-list__icon-icon {
   font-size: 25px;
   color: #26c17e;
 }
-.contact-list {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
+
+.contact-list__icon-image {
+  width: 30px;
+  height: 30px;
 }
-.contact-list_item {
+
+.contact-list__item {
   display: flex;
   gap: 20px;
+  align-items: center;
 }
-.contact-list_item {
+
+.contact-list__icon {
   cursor: pointer;
   text-decoration: none;
   color: #007bff;
   color: #000;
+  display: flex;
+  gap: 20px;
 }
 
-.contact-list_item:hover {
+.contact-list__icon:hover {
   text-decoration: underline;
 }
 
-.item {
+.contact-list__info {
   display: inline-block;
   margin-right: 15px;
 }
 
 /* Feedback section */
 
-.feedback-item {
+.feedback__item {
   margin-bottom: 40px;
 }
-.feedback-text {
+.feedback__text {
   background-color: #eee;
   padding: 15px;
   font-size: 14px;
 }
 
-.feedback-reporter {
+.feedback__reporter {
   display: flex;
   align-items: center;
   gap: 15px;
   margin-top: 15px;
 }
-.reporter-photo {
+.feedback__reporter-photo {
   width: 50px;
   height: 50px;
   border-radius: 50%;
 }
 
-.author-details {
+.feedback__author-details {
   font-size: 14px;
 }
-.author-name {
+.feedback__author-name {
   margin-right: 5px;
 }
-.citeurl-link {
+.feedback__citeurl-link {
   text-decoration: none;
   color: #26c17e;
 }
@@ -521,9 +526,9 @@ Experience section
 }
 
 @media only screen and (max-width: 600px) {
-  .intro-page__background-image {
+  /* .intro-page__background-image {
     object-fit: fill;
-  }
+  } */
   .intro-page__content .photo-box .photo-box__description {
     margin: 10px 20px;
   }

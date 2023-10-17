@@ -11,23 +11,25 @@ const scrollToTop = () => {
 const Feedback = ({ data }) => {
   return (
     <>
-      <section id="feedback" className="element">
-        <h2>Feedbacks</h2>
-        <div className="feedback-list">
+      <section id="feedback" className="feedback element">
+        <h2 className="feedback__title">Feedbacks</h2>
+        <div className="feedback__list">
           {data.map((item, index) => (
-            <div className="feedback-item" key={index}>
-              <div className="feedback-text">{item.feedback}</div>
-              <div className="feedback-reporter">
+            <div className="feedback__item" key={index}>
+              <div className="feedback__text">{item.feedback}</div>
+              <div className="feedback__reporter">
                 <img
                   src={item.reporter.photoUrl}
                   alt={item.reporter.name}
-                  className="reporter-photo"
+                  className="feedback__reporter-photo"
                 />
-                <div className="author-details">
-                  <span className="author-name">{item.reporter.name}</span>
+                <div className="feedback__author-details">
+                  <span className="feedback__author-name">
+                    {item.reporter.name}
+                  </span>
                   <a
                     href={item.reporter.citeUrl}
-                    className="citeurl-link"
+                    className="feedback__citeurl-link"
                     target="_blank"
                     rel="noreferrer"
                   >

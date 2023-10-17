@@ -9,7 +9,7 @@ export function Address() {
   return (
     <section id="contact">
       <h2>Contacts</h2>
-      <ul className="contact-ul">
+      <ul className="contact-list">
         {/* <ContactInfo
           icon={faPhone}
           data="592 50

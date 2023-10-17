@@ -32,15 +32,17 @@ const ContactItem = ({ platform, link, imageSrc, altText }) => {
   };
 
   return (
-    <li className="contact-ul contact-list item" onClick={handleLinkClick}>
-      <div className="contact-list_item item">
-        <span className="contact-list_item">
-          <img src={imageSrc} alt={altText} className="contact-icon" />
-        </span>
+    <li className="contact-list__item" onClick={handleLinkClick}>
+      <div className="contact-list__icon">
+        <img
+          src={imageSrc}
+          alt={altText}
+          className="contact-list__icon-image"
+        />
       </div>
-      <div className="contact-list_item item">
-        <p className="contact-list_item">{platform}</p>
-        <span className="contact-list_item">{link}</span>
+      <div className="contact-list__icon contact-list__info">
+        <p className="contact-list__icon contact-list__platform">{platform}</p>
+        <span className="contact-list__link">{link}</span>
       </div>
     </li>
   );
@@ -53,22 +55,24 @@ const ContactInfo = ({ icon, data, type }) => {
     content = (
       <Link
         to={`mailto:${data}`}
-        className="contact-list_email contact-list_item email"
+        className="contact-list__icon contact-list_email"
       >
-        <FontAwesomeIcon icon={icon} className="contact-icon" /> {data}
+        <FontAwesomeIcon icon={icon} className="contact-list__icon-icon" />{" "}
+        {data}
       </Link>
     );
   } else if (type === "phone") {
     content = (
-      <p className="contact-list_item">
-        <FontAwesomeIcon icon={icon} className="contact-icon" /> {data}
+      <p className="contact-list__icon">
+        <FontAwesomeIcon icon={icon} className="contact-list__icon-icon" />{" "}
+        {data}
       </p>
     );
   } else {
     content = null;
   }
 
-  return <li className="contact-ul contact-list">{content}</li>;
+  return <li className="contact-list__item">{content}</li>;
 };
 
 export { ContactItem, ContactInfo };
