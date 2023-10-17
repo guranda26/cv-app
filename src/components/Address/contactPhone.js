@@ -18,11 +18,9 @@ const PhoneContact = () => {
   };
 
   return (
-    <li className="contact-list__item">
-      <div onClick={handlePhoneClick}>
-        <ContactInfo icon={faPhone} data="592 50 53 36" type="phone" />
-      </div>
-    </li>
+    <div onClick={handlePhoneClick} className="contact-list__item">
+      <ContactInfo icon={faPhone} data="592 50 53 36" type="phone" />
+    </div>
   );
 };
 

@@ -1,0 +1,28 @@
+$mainCol: #fff;
+$headingCol: #26c17e;
+$textCol: #000;
+$asideCol: #222935;
+$eventCol: #667081;
+$secCol: #ccc;
+$shadowCol: #00000097;
+$cardCol: #ffffffdb;
+$borderCol: #eee;
+
+$colorHighlight: $mainCol, $headingCol, $textCol, $asideCol, $eventCol, $secCol,
+  $shadowCol, $cardCol, $borderCol;
+
+$mainFont: "Open Sans";
+$callbackFont: "sans-serif";
+
+$fontStack: $mainFont, $callbackFont;
+
+$textFontSize: 14px;
+$headingFontSize: 16px;
+$mainHeadingFontSize: 25px;
+
+$fontSizes: $textFontSize, $headingFontSize, $mainHeadingFontSize;
+
+$headingFontWeight: 700;
+$textFontWeight: 400;
+
+$fontThickness: $headingFontWeight, $textFontWeight;

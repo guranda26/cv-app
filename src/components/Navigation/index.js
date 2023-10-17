@@ -80,7 +80,6 @@ const Nav = () => {
               className="nav-bar__item"
             >
               <NavLink
-                smooth
                 to={`/inner#${section.id}`}
                 style={{
                   textDecoration: "none",

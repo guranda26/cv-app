@@ -1,0 +1,67 @@
+@import "mixin";
+@import "variables";
+@import "function";
+
+/*Intro Page*/
+.intro-page {
+  @include dimensions(100%, 100vh);
+  position: relative;
+  overflow: hidden;
+
+  &__background-image {
+    @include dimensions(100%, 100%);
+    position: absolute;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  &__content {
+    @include absoluteCenter;
+    @include dimensions(500px);
+    @include flexContainer($direction: column, $justify: center);
+    .photo-box {
+      margin-bottom: 20px;
+
+      .photo-box__name {
+        font-size: 40px;
+        margin-bottom: 15px;
+      }
+
+      .photo-box__avatar {
+        @include dimensions(150px);
+      }
+
+      .photo-box__title {
+        font-size: 20px;
+        color: $mainCol;
+        margin-bottom: 5px;
+        font-weight: 600;
+      }
+      .photo-box__description {
+        font-size: $textFontSize;
+        color: $mainCol;
+        text-align: center;
+        line-height: 21px;
+      }
+    }
+
+    .button {
+      display: block;
+      margin: auto;
+
+      &:hover {
+        background-color: $headingCol;
+      }
+    }
+  }
+  &__button {
+    text-decoration: none;
+  }
+
+  &__shadow {
+    position: absolute;
+    @include dimensions(100%, 100%);
+    background-color: $shadowCol;
+    z-index: 0;
+  }
+}

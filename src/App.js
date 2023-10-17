@@ -1,4 +1,5 @@
-import "./App.css";
+// import "./App.css";
+import "./styles/style.css";
 import { Routes, Route } from "react-router-dom";
 import MainPageComponent from "./services/mainPage";
 import IntroPageComponent from "./services/introPage";

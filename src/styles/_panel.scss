@@ -1,0 +1,48 @@
+@import "mixin";
+@import "variables";
+@import "function";
+/* Aside */
+
+.aside {
+  max-width: 250px;
+  position: relative;
+  background-color: $asideCol;
+
+  &--hidden {
+    display: none;
+  }
+}
+.nav-bar {
+  @include dimensions(250px);
+
+  &__list {
+    @include flexContainer($direction: column);
+    max-width: 250px;
+    gap: 30px;
+    margin-left: 20px;
+  }
+
+  &__item {
+    list-style: none;
+  }
+
+  &__icon {
+    font-size: $textFontSize;
+    margin-right: 15px;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $eventCol;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $headingCol;
+    }
+  }
+
+  .button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}

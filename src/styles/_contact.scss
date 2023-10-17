@@ -1,0 +1,52 @@
+/*Contact section */
+
+.contact-list {
+  @include flexContainer($direction: column);
+  @include fonts(getFont(), $headingFontSize, $textFontWeight, $asideCol);
+  gap: 30px;
+
+  &__item {
+    @include flexContainer($align: center);
+    gap: 20px;
+  }
+
+  &_phone,
+  &__platform {
+    color: $textCol;
+    font-weight: $headingFontWeight;
+  }
+
+  &_email {
+    font-weight: $headingFontWeight;
+  }
+
+  &__info {
+    display: inline-block;
+    margin-right: 15px;
+  }
+
+  &__icon {
+    cursor: pointer;
+    text-decoration: none;
+    color: $textCol;
+    gap: 20px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &-icon {
+      @include fonts(
+        getFont(),
+        $mainHeadingFontSize,
+        $headingFontWeight,
+        $headingCol
+      );
+      margin-right: 20px;
+    }
+
+    &-image {
+      @include dimensions(30px, 30px);
+    }
+  }
+}

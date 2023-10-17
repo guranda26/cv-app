@@ -1,0 +1,79 @@
+@media only screen and (max-width: 800px) {
+  .portfolio__items {
+    @include flexContainer($justify: center, $align: flex-end);
+  }
+
+  .portfolio-item {
+    margin-bottom: 20px;
+    margin-left: 20%;
+
+    &__image {
+      @include dimensions(250px);
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .intro-page__content .photo-box .photo-box__description {
+    margin: 10px 20px;
+  }
+  .intro-page__content .photo-box .photo-box__name {
+    font-size: 35px;
+  }
+  .nav-ul {
+    @include dimensions(50px);
+  }
+  .aside {
+    @include dimensions(50px);
+
+    .button {
+      @include flexContainer($justify: center);
+      padding: 5px;
+      margin: auto;
+      margin-right: 0;
+
+      .button__icon {
+        margin-right: 0;
+      }
+
+      &__text {
+        display: none;
+      }
+    }
+    .photo-box {
+      .photo-box__avatar {
+        @include dimensions(30px);
+        margin-bottom: 10px;
+      }
+
+      .photo-box__name {
+        display: none;
+      }
+    }
+  }
+
+  .nav-bar__link span.icon svg {
+    @include dimensions(14px);
+  }
+
+  .nav-bar__link .nav-bar__label {
+    display: none;
+  }
+  .nav-button {
+    left: 50px;
+  }
+  .main-container-button--nav {
+    @include absolutePosition(20px, auto, auto, 50px);
+    border-radius: 0;
+
+    .button__icon {
+      font-size: $headingFontSize;
+      padding: 0px 3px;
+    }
+  }
+
+  .education__timeline {
+    padding: 20px;
+    height: 80vh;
+  }
+}

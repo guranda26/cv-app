@@ -1,0 +1,35 @@
+/* 
+Experience section
+*/
+
+.expertise__item {
+  position: relative;
+  margin-bottom: 50px;
+}
+.expertise__date {
+  @include absolutePosition(27px, auto, auto, 0);
+  color: $eventCol;
+}
+.expertise__info {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  grid-template-rows: 1fr;
+  align-items: center;
+
+  &-company {
+    font-weight: $headingFontWeight;
+    justify-self: start;
+    align-self: baseline;
+  }
+
+  &-job,
+  &-company {
+    font-weight: $headingFontWeight;
+    font-size: $headingFontSize;
+  }
+
+  &-description {
+    grid-column: 2;
+    margin-top: 5px;
+  }
+}

@@ -1,0 +1,32 @@
+/* Feedback section */
+
+.feedback__item {
+  margin-bottom: 40px;
+}
+.feedback__text {
+  font-size: $textFontSize;
+  background-color: $borderCol;
+  padding: 15px;
+}
+
+.feedback__reporter {
+  @include flexContainer($align: center);
+  gap: 15px;
+  margin-top: 15px;
+
+  &-photo {
+    @include dimensions(50px, 50px);
+    border-radius: 50%;
+  }
+}
+
+.feedback__author-details {
+  font-size: $textFontSize;
+}
+.feedback__author-name {
+  margin-right: 5px;
+}
+.feedback__citeurl-link {
+  text-decoration: none;
+  color: $headingCol;
+}

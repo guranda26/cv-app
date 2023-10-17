@@ -44,7 +44,7 @@ const Feedback = ({ data }) => {
           ))}
         </div>
       </section>
-      <div className="main-container-button">
+      <div className="main-container-button arrow-button">
         <Button
           icon={<FontAwesomeIcon icon={faChevronUp} onClick={scrollToTop} />}
         />

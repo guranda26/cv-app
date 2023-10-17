@@ -1,0 +1,56 @@
+/* Timeline Section */
+
+.education {
+  height: 100%;
+
+  &__timeline {
+    padding: 20px;
+    height: 30vh;
+    max-height: 80vh;
+
+    &-container {
+      height: 100%;
+      overflow-y: auto;
+    }
+
+    &-event {
+      margin-bottom: 20px;
+      @include flexContainer($align: flex-start);
+    }
+  }
+}
+
+.timeline-event__date {
+  @include flexContainer($direction: column, $align: center);
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.timeline-event__details {
+  position: relative;
+  flex: 1;
+  margin: 0 auto;
+  background-color: $borderCol;
+  padding: 20px;
+}
+.timeline-event__arrow {
+  @include dimensions(0, 0);
+  @include absolutePosition(15px, auto, auto, -10px);
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid $borderCol;
+}
+.timeline-event__line {
+  @include dimensions(3px, 100px);
+  margin-top: 20px;
+  background-color: $headingCol;
+}
+
+.timeline-event__title {
+  font-weight: bold;
+  font-size: $headingFontSize;
+  margin-bottom: 5px;
+}
+.timeline-event__text {
+  color: $eventCol;
+}

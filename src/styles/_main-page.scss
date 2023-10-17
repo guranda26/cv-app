@@ -1,0 +1,55 @@
+/* Main */
+.main {
+  margin: 20px;
+  margin-bottom: 0;
+
+  &-container {
+    margin: 0 15px;
+    position: relative;
+
+    &-button {
+      @include flexContainer($justify: flex-end);
+      margin-bottom: 0;
+
+      .button {
+        text-align: center;
+        padding: 5px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+      .button__icon {
+        margin: auto;
+      }
+
+      &--nav {
+        display: flex;
+        @include absolutePosition(20px, auto, auto, 250px);
+        border-radius: 0;
+
+        .button__icon {
+          font-size: 20px;
+          padding: 0px 3px;
+        }
+      }
+
+      &--left-aligned {
+        // @include absolutePosition(20px, auto, auto, auto);
+        position: absolute;
+        top: 20px;
+        border-radius: 0;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+    .arrow-button .button {
+      @include flexContainer($justify: center);
+      padding: 6px;
+      border-top-left-radius: 5px;
+    }
+  }
+}
+
+.layout-section {
+  display: flex;
+  position: relative;
+}

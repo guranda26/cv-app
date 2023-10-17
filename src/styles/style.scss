@@ -1,0 +1,92 @@
+@import "mixin";
+@import "variables";
+@import "function";
+@import "intro-page";
+@import "panel";
+@import "main-page";
+@import "timeline";
+@import "expertise";
+@import "portfolio";
+@import "contact";
+@import "feedback";
+@import "layout";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0;
+  @include fonts(getFont(), $textFontSize, $textFontWeight, $textCol);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+h1,
+h2 {
+  @include fonts(
+    getFont(),
+    $mainHeadingFontSize,
+    $headingFontWeight,
+    $headingCol
+  );
+  line-height: 30px;
+  margin-bottom: 30px;
+  margin-top: 60px;
+}
+
+/* Photobox */
+.photo-box {
+  @include flexContainer($direction: column, $align: center);
+  padding-top: 25px;
+  margin-bottom: 50px;
+
+  &__name {
+    color: $mainCol;
+    margin: 0px;
+  }
+
+  &__avatar {
+    @include dimensions(100px, auto);
+    margin-bottom: 10px;
+  }
+}
+
+/* About section */
+.about__heading {
+  margin-top: 20px;
+}
+.about__text {
+  line-height: 21px;
+}
+
+/*Button*/
+
+.button {
+  background-color: $asideCol;
+  color: $mainCol;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 10px 20px;
+}
+
+.aside .button:hover {
+  background-color: $headingCol;
+}
+
+.button .button__icon {
+  color: $mainCol;
+}
+
+.main-container-button .button__icon {
+  display: flex;
+  justify-content: center;
+}
+
+.aside #aside-button_left {
+  @include absolutePosition(auto, auto, 0, 0);
+  margin-left: 25%;
+  margin-bottom: 5px;
+}

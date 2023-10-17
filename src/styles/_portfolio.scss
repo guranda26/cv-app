@@ -1,0 +1,60 @@
+/* Portfolio section */
+
+.portfolio__container {
+  margin: 20px;
+}
+
+.portfolio__filter {
+  margin-bottom: 20px;
+  display: block;
+
+  button {
+    margin-right: 10px;
+    cursor: pointer;
+    border: transparent;
+    background-color: transparent;
+
+    &:hover {
+      color: $headingCol;
+    }
+  }
+
+  .active {
+    color: $headingCol;
+  }
+}
+.portfolio__items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.portfolio-item {
+  border: 1px solid $secCol;
+  transition: all 0.3s ease;
+  display: flex;
+  margin-right: 30px;
+
+  &__image {
+    @include dimensions(200px);
+  }
+}
+
+.portfolio__title,
+.portfolio__content,
+.portfolio__link {
+  margin-bottom: 5px;
+}
+
+.portfolio__info {
+  @include absolutePosition(auto, auto, 0, 0);
+  @include dimensions(100%, 0);
+  background: $cardCol;
+  overflow: hidden;
+  transition: height 0.3s ease-in-out;
+}
+
+.portfolio-item:hover .portfolio__info {
+  padding: 15px;
+  height: 100%;
+}
