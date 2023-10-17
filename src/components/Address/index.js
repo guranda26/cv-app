@@ -1,16 +1,16 @@
 import React from "react";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { ContactItem, ContactInfo } from "../../services/contactLogo";
 import twitterImg from "../../assets/images/icons/twitter-icon.png";
 import facebookImg from "../../assets/images/icons/facebook-icon.png";
 import skypeImg from "../../assets/images/icons/skype-icon.png";
-import PhoneContact from "../../services/contactPhone";
+// import PhoneContact from "../../services/contactPhone";
 export function Address() {
   return (
     <section id="contact">
       <h2>Contacts</h2>
       <ul className="contact-list">
-        <PhoneContact />
+        <ContactInfo icon={faPhone} data="592 50 53 36" type="phone" />
         <ContactInfo icon={faEnvelope} data="guralemo@gmail.com" type="email" />
         <ContactItem
           platform="Twitter"

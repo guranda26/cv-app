@@ -9,6 +9,7 @@ const scrollToTop = () => {
     behavior: "smooth",
   });
 };
+
 const Feedback = ({ data }) => {
   return (
     <>

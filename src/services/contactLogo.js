@@ -2,15 +2,8 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 
-const openPhoneOrSkype = (platform, link) => {
-  if (
-    platform.toLowerCase() === "skype" ||
-    platform.toLowerCase() === "phone" ||
-    platform.toLowerCase() === "facebook" ||
-    platform.toLowerCase() === "twitter"
-  ) {
-    window.open(link, "_blank");
-  }
+const openLink = (link) => {
+  window.open(link, "_blank");
 };
 
 const ContactItem = ({ platform, link, imageSrc, altText }) => {
@@ -22,7 +15,7 @@ const ContactItem = ({ platform, link, imageSrc, altText }) => {
     const shouldOpen = window.confirm(fullMessage);
 
     if (shouldOpen) {
-      openPhoneOrSkype(platform, link);
+      openLink(link);
     } else {
       console.log("User clicked Cancel");
     }
@@ -38,7 +31,7 @@ const ContactItem = ({ platform, link, imageSrc, altText }) => {
         />
       </div>
       <div className="contact-list__icon contact-list__info">
-        <p className="contact-list__icon contact-list__platform">{platform}</p>
+        <p className="contact-list__icon contact-list_phone">{platform}</p>
         <span className="contact-list__link">{link}</span>
       </div>
     </li>
@@ -60,10 +53,13 @@ const ContactInfo = ({ icon, data, type }) => {
     );
   } else if (type === "phone") {
     content = (
-      <p className="contact-list__icon contact-list_phone">
+      <a
+        href={`tel:${data}`}
+        className={`contact-list__icon contact-list_${type}`}
+      >
         <FontAwesomeIcon icon={icon} className="contact-list__icon-icon" />{" "}
         {data}
-      </p>
+      </a>
     );
   } else {
     content = null;
