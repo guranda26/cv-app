@@ -5,10 +5,7 @@ import { Link } from "react-router-dom";
 const openPhoneOrSkype = (platform, link) => {
   if (
     platform.toLowerCase() === "skype" ||
-    platform.toLowerCase() === "phone"
-  ) {
-    window.open(link, "_blank");
-  } else if (
+    platform.toLowerCase() === "phone" ||
     platform.toLowerCase() === "facebook" ||
     platform.toLowerCase() === "twitter"
   ) {

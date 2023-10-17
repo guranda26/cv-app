@@ -1,4 +1,4 @@
-import userPhoto from "../../assets/images/user.jpeg";
+import userPhoto from "../assets/images/user.jpeg";
 
 const feedbackData = [
   {

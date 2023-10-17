@@ -1,6 +1,6 @@
 import React from "react";
 import Panel from "../components/Panel/index";
-import AllComponents from "./allComponent";
+import AllComponents from "../pages/Inner/allComponent";
 import { Routes, Route } from "react-router-dom";
 
 const MainPageComponent = () => {

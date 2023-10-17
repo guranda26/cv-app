@@ -4,7 +4,7 @@ import secondCard from "../../assets/images/portfolio-card2.png";
 import card from "../../assets/images/portfolio-card.png";
 import imagesLoaded from "imagesloaded";
 
-import PortfolioInfo from "./data";
+import PortfolioInfo from "./info";
 
 const Portfolio = () => {
   const [filter, setFilter] = useState("*");

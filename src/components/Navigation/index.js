@@ -1,68 +1,10 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { NavLink } from "react-router-dom";
-
-// import { HashLink } from "react-router-hash-link";
-import {
-  faUser,
-  faGraduationCap,
-  faPen,
-  faSuitcase,
-  faLocationArrow,
-  faComment,
-  faGem,
-} from "@fortawesome/free-solid-svg-icons";
-
-const sections = [
-  {
-    id: "about",
-    label: "About me",
-    icon: faUser,
-  },
-  {
-    id: "education",
-    label: "Education",
-    icon: faGraduationCap,
-  },
-  {
-    id: "expertise",
-    label: "Experience",
-    icon: faPen,
-  },
-  {
-    id: "skills",
-    label: "Skills",
-    icon: faGem,
-  },
-  {
-    id: "portfolio",
-    label: "Portfolio",
-    icon: faSuitcase,
-  },
-  {
-    id: "contact",
-    label: "Contact",
-    icon: faLocationArrow,
-  },
-  {
-    id: "feedback",
-    label: "Feedback",
-    icon: faComment,
-  },
-];
-
+import sections from "../../modules/navigationData";
+import scrollToElement from "../../modules/scrollElement";
 const Nav = () => {
   const [activeLink, setActiveLink] = useState(null);
-
-  const scrollToElement = (elementId) => {
-    const element = document.getElementById(elementId);
-    if (element) {
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-  };
 
   const handleLinkClick = (sectionId) => {
     setActiveLink(sectionId);
