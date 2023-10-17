@@ -266,7 +266,8 @@ Experience section
   justify-self: start;
   align-self: baseline;
 }
-.expertise__info-job, .expertise__info-company {
+.expertise__info-job,
+.expertise__info-company {
   font-weight: 700;
   font-size: 16px;
 }
@@ -358,7 +359,8 @@ Experience section
   flex-wrap: nowrap;
   gap: 20px;
 }
-.contact-list_phone, .contact-list__platform {
+.contact-list_phone,
+.contact-list__platform {
   color: #000;
   font-weight: 700;
 }
@@ -595,4 +597,4 @@ h2 {
   left: 0;
   margin-left: 25%;
   margin-bottom: 5px;
-}/*# sourceMappingURL=style.css.map */
+} /*# sourceMappingURL=style.css.map */
