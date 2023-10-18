@@ -4,7 +4,7 @@ import { ContactItem, ContactInfo } from "../../services/contactLogo";
 import twitterImg from "../../assets/images/icons/twitter-icon.png";
 import facebookImg from "../../assets/images/icons/facebook-icon.png";
 import skypeImg from "../../assets/images/icons/skype-icon.png";
-// import PhoneContact from "../../services/contactPhone";
+
 export function Address() {
   return (
     <section id="contact">

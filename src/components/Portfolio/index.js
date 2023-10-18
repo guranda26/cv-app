@@ -28,7 +28,7 @@ const Portfolio = () => {
     };
   }, [filter]);
 
-  const handleFilterChange = (newFilter, button) => {
+  const handleFilterChange = (newFilter) => {
     if (filter === newFilter) {
       setFilter("*");
     } else {
