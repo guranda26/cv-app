@@ -1,0 +1,106 @@
+/* Skills */
+
+.skills {
+  position: relative;
+  .button {
+    @include absolutePosition(0, 0, auto, auto);
+
+    &:hover {
+      background-color: $headingCol;
+    }
+
+    &__icon {
+      margin-right: 3px;
+    }
+  }
+  &-container {
+    display: block;
+    table {
+      @include dimensions(100%);
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    &__range {
+      td {
+        padding: 4px 0;
+        border: 1px solid $eventCol;
+        border-top: none;
+        border-collapse: collapse;
+      }
+    }
+
+    &__text {
+      td {
+        border: none;
+        font-size: 14px;
+        color: $eventCol;
+      }
+
+      td {
+        width: calc(100% / 3);
+      }
+    }
+  }
+
+  &-form {
+    border: 1px solid $headingCol;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+
+    &__field {
+      gap: 10px;
+      margin: 10px 0;
+
+      .field {
+        width: 200px;
+        border: none;
+        border: 1px solid $secCol;
+        border-radius: 5px;
+        padding: 8px 6px;
+        margin-left: 10px;
+      }
+
+      .field:focus {
+        border: none;
+        outline: 1px solid $headingCol;
+      }
+
+      .error {
+        border: 1px solid $errorCol;
+        color: $errorCol;
+        outline: none;
+      }
+    }
+
+    &__error {
+      margin: 5px 0;
+      color: $errorCol;
+      font-size: 12px;
+    }
+
+    &__button {
+      background-color: $eventCol;
+      padding: 10px 15px;
+      border-radius: 5px;
+      border: none;
+      margin: 10px 5px;
+    }
+
+    .valid-button {
+      cursor: pointer;
+
+      &:hover {
+        background-color: $headingCol;
+      }
+    }
+  }
+
+  .skills-form__range {
+    padding: 6px 15px;
+    margin-bottom: 5px;
+    background-color: $headingCol;
+    color: $mainCol;
+  }
+}

@@ -10,6 +10,7 @@ import { store } from "./app/store";
 if (process.env.NODE_ENV === "development") {
   makeServer({ environment: "development" });
 }
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Router>

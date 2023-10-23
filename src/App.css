@@ -260,6 +260,97 @@
   background-color: #26c17e;
 }
 
+/* Skills */
+.skills {
+  position: relative;
+}
+.skills .button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: auto;
+  left: auto;
+}
+.skills .button:hover {
+  background-color: #26c17e;
+}
+.skills .button__icon {
+  margin-right: 3px;
+}
+.skills-container {
+  display: block;
+}
+.skills-container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+.skills-container__range td {
+  padding: 4px 0;
+  border: 1px solid #667081;
+  border-top: none;
+  border-collapse: collapse;
+}
+.skills-container__text td {
+  border: none;
+  font-size: 14px;
+  color: #667081;
+}
+.skills-container__text td {
+  width: 33.3333333333%;
+}
+.skills-form {
+  border: 1px solid #26c17e;
+  padding: 20px;
+  margin-bottom: 25px;
+  border-radius: 5px;
+}
+.skills-form__field {
+  gap: 10px;
+  margin: 10px 0;
+}
+.skills-form__field .field {
+  width: 200px;
+  border: none;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 8px 6px;
+  margin-left: 10px;
+}
+.skills-form__field .field:focus {
+  border: none;
+  outline: 1px solid #26c17e;
+}
+.skills-form__field .error {
+  border: 1px solid #ff0000;
+  color: #ff0000;
+  outline: none;
+}
+.skills-form__error {
+  margin: 5px 0;
+  color: #ff0000;
+  font-size: 12px;
+}
+.skills-form__button {
+  background-color: #667081;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: none;
+  margin: 10px 5px;
+}
+.skills-form .valid-button {
+  cursor: pointer;
+}
+.skills-form .valid-button:hover {
+  background-color: #26c17e;
+}
+.skills .skills-form__range {
+  padding: 6px 15px;
+  margin-bottom: 5px;
+  background-color: #26c17e;
+  color: #fff;
+}
+
 /* 
 Experience section
 */

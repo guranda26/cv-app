@@ -12,9 +12,9 @@ export const fetchEducation = createAsyncThunk(
 const educationsSlice = createSlice({
   name: "educations",
   initialState: {
-    data: [], // initial data state
-    status: "idle", // initial status
-    error: null, // optional error state
+    data: [],
+    status: "idle",
+    error: null,
   },
   reducers: {},
   extraReducers: (builder) => {

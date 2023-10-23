@@ -1,42 +1,10 @@
-// import { createServer, Model } from "miragejs";
-// import eventsData from "../modules/timelineData";
-
-// export function makeServer({ environment = "development" } = {}) {
-//   let server = createServer({
-//     environment,
-
-//     models: {
-//       educations: Model,
-//     },
-
-//     seeds(server) {
-//       server.db.loadData({
-//         educations: eventsData,
-//       });
-//     },
-
-//     routes() {
-//       this.namespace = "api";
-
-//       this.get(
-//         "/educations",
-//         (schema) => {
-//           return schema.educations.all();
-//         },
-//         { timing: 3000 }
-//       );
-//     },
-//   });
-
-//   return server;
-// }
 import { createServer, Model } from "miragejs";
 
 export function makeServer() {
-  let server = createServer({
+  createServer({
     models: {
       education: Model,
-      // Add more models here if needed
+      skill: Model,
     },
 
     seeds(server) {
@@ -71,11 +39,19 @@ export function makeServer() {
         { timing: 3000 }
       );
 
-      // Add more routes for other models if needed
-      // this.get("skills", (schema) => {
-      //   return schema.skills.all();
-      // }, { timing: 3000 });
+      this.get(
+        "skills",
+        (schema) => {
+          return schema.skills.all();
+        },
+        { timing: 3000 }
+      );
+
+      this.post("skills", (schema, request) => {
+        const { name, range } = JSON.parse(request.requestBody);
+        const skill = schema.skills.create({ name, range });
+        return skill;
+      });
     },
   });
-  return server;
 }
