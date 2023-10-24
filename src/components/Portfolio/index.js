@@ -72,7 +72,7 @@ const Portfolio = () => {
   ];
 
   return (
-    <section id="portfolio">
+    <section id="portfolio" data-testid="portfolio-component">
       <h2 className="portfolio__title">Portfolio</h2>
       <div className="portfolio__container">
         <div className="portfolio__filter">

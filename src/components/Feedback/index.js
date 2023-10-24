@@ -13,7 +13,11 @@ const scrollToTop = () => {
 const Feedback = ({ data }) => {
   return (
     <>
-      <section id="feedback" className="feedback element">
+      <section
+        id="feedback"
+        className="feedback element"
+        data-testid="feedback-component"
+      >
         <h2 className="feedback__title">Feedbacks</h2>
         <div className="feedback__list">
           {data.map((item, index) => (

@@ -12,7 +12,7 @@ const Nav = () => {
   };
 
   return (
-    <nav className="nav-bar">
+    <nav className="nav-bar" data-testid="nav">
       <ul className="nav-bar__list">
         {sections &&
           sections.map((section) => (

@@ -15,7 +15,7 @@ const Timeline = () => {
   }, [dispatch]);
 
   return (
-    <section id="education">
+    <section id="education" data-testid="timeline-component">
       <h2 className="education__title">Education</h2>
       <div className="education__timeline">
         <div className="education__timeline-container">

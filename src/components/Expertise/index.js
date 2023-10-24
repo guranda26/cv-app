@@ -2,7 +2,7 @@ import React from "react";
 
 const Expertise = ({ data }) => {
   return (
-    <section id="expertise">
+    <section id="expertise" data-testid="expertise-component">
       <h2 className="expertise__title">Experience</h2>
       <div className="expertise__list">
         {data.map((experience, index) => (

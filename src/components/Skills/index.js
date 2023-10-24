@@ -12,7 +12,7 @@ import {
 import Button from "../Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
-export function Skills() {
+export const Skills = () => {
   const dispatch = useDispatch();
   const [isContentVisible, setContentVisibility] = useState(false);
 
@@ -28,6 +28,7 @@ export function Skills() {
   // localStorage.clear();
   const data = useSelector((state) => state.skills.data);
   const status = useSelector((state) => state.skills.status);
+
   const isOpen = useSelector((state) => state.skills.skillsIsOpen);
 
   const initialValues = {
@@ -53,7 +54,7 @@ export function Skills() {
   const isValid = true;
 
   return (
-    <section id="skills" className="skills">
+    <section id="skills" className="skills" data-testid="skills-component">
       <h2>Skills</h2>
 
       <Button
@@ -159,4 +160,4 @@ export function Skills() {
       </div>
     </section>
   );
-}
+};
