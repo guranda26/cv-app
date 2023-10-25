@@ -72,9 +72,7 @@ describe("Redux Store", () => {
 
     const action = {
       type: "skills/skillsFetched",
-      payload: [
-        // Some skills data
-      ],
+      payload: [],
     };
 
     store.dispatch(action);

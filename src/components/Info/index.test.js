@@ -23,7 +23,6 @@ test("renders Info component without title", () => {
   const renderedText = screen.getByText(text);
   expect(renderedText).toBeInTheDocument();
 
-  // Assert that title element is not rendered
   const renderedTitle = screen.queryByText("Sample Title");
   expect(renderedTitle).toBeNull();
 });

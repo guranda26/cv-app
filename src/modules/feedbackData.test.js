@@ -1,4 +1,4 @@
-import feedbackData from "./feedbackData"; // Adjust the import path based on your project structure
+import feedbackData from "./feedbackData";
 
 describe("feedbackData", () => {
   test("should have valid feedback items", () => {
