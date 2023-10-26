@@ -345,10 +345,35 @@
   background-color: #26c17e;
 }
 .skills .skills-form__range {
-  padding: 6px 15px;
+  padding: 6px 10px;
   margin-bottom: 5px;
   background-color: #26c17e;
   color: #fff;
+  position: relative;
+}
+.skills .skills-close__click {
+  width: 20px;
+  height: 20px;
+  background-color: #ff0000;
+  position: absolute;
+  top: 5px;
+  right: 7px;
+  bottom: auto;
+  left: auto;
+  opacity: 0.85;
+  cursor: pointer;
+  border: none;
+  padding: 0 2px;
+  border-radius: 50%;
+}
+.skills .skills-close__click:hover {
+  background-color: #222935;
+}
+.skills .skills-close__click .close__click-icon {
+  font-size: 15px;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
 }
 
 /* 

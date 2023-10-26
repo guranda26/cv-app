@@ -1,20 +1,22 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { useState } from "react";
 import { Formik, Form, ErrorMessage, Field } from "formik";
+import { fetchSkills } from "../../features/skills/skillsSlice";
 import * as Yup from "yup";
 import {
-  fetchSkills,
   toggleForm,
   postSkills,
+  toggleSkillRemove,
 } from "../../features/skills/skillsSlice";
 import Button from "../Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
+import { faPenToSquare, faXmark } from "@fortawesome/free-solid-svg-icons";
+
 export const Skills = () => {
   const dispatch = useDispatch();
-  const [isContentVisible, setContentVisibility] = useState(false);
+  const isOpen = useSelector((state) => state.skills.skillsIsOpen);
+  const skills = useSelector((state) => state.skills.data.skills);
 
   useEffect(() => {
     dispatch(fetchSkills());
@@ -24,12 +26,9 @@ export const Skills = () => {
     dispatch(toggleForm());
   };
 
-  const localData = JSON.parse(localStorage.getItem("skills"));
-  // localStorage.clear();
-  const data = useSelector((state) => state.skills.data);
-  const status = useSelector((state) => state.skills.status);
-
-  const isOpen = useSelector((state) => state.skills.skillsIsOpen);
+  const handleClose = (skillId) => {
+    dispatch(toggleSkillRemove(skillId));
+  };
 
   const initialValues = {
     skillName: "",
@@ -38,9 +37,7 @@ export const Skills = () => {
 
   const onSubmit = (values, { resetForm }) => {
     dispatch(postSkills(values));
-    console.log(values);
     resetForm();
-    setContentVisibility(true);
   };
 
   const validationSchema = Yup.object({
@@ -51,7 +48,6 @@ export const Skills = () => {
       .min(10, "Skill range must be greater than or equal to 10")
       .max(100, "Skill range must be less than or equal to 100"),
   });
-  const isValid = true;
 
   return (
     <section id="skills" className="skills" data-testid="skills-component">
@@ -66,77 +62,84 @@ export const Skills = () => {
       />
 
       <div>
-        <Formik
-          initialValues={initialValues}
-          onSubmit={onSubmit}
-          validationSchema={validationSchema}
-        >
-          {({ errors }) => (
-            <Form
-              className="skills-form"
-              style={{ display: isOpen ? "block" : "none" }}
-            >
-              <div className="skills-form__field">
-                <label htmlFor="skillName">Skill name</label>
-                <Field
-                  name="skillName"
-                  placeholder="Enter Skill name"
-                  type="text"
-                  id="skillName"
-                  className={`field ${errors.skillName ? "error" : ""}`}
-                />
-                <div className="skills-form__error">
-                  <ErrorMessage name="skillName" component="div" />
-                </div>
-              </div>
-              <div className="skills-form__field">
-                <label htmlFor="skillRange">Skill range</label>
-                <Field
-                  name="skillRange"
-                  placeholder="Enter skill range"
-                  type="number"
-                  id="skillRange"
-                  className={`field ${errors.skillRange ? "error" : ""}`}
-                />
-                <div className="skills-form__error">
-                  <ErrorMessage name="skillRange" component="div" />
-                </div>
-              </div>
-              <button
-                type="submit"
-                className={`skills-form__button ${
-                  isValid ? "valid-button" : "invalid"
-                }`}
-                disabled={!isValid}
+        {isOpen && (
+          <Formik
+            initialValues={initialValues}
+            onSubmit={onSubmit}
+            validationSchema={validationSchema}
+          >
+            {({ errors, isValid }) => (
+              <Form
+                className="skills-form"
+                style={{ display: isOpen ? "block" : "none" }}
               >
-                Add skill
-              </button>
-            </Form>
-          )}
-        </Formik>
+                <div className="skills-form__field">
+                  <label htmlFor="skillName">Skill name</label>
+                  <Field
+                    name="skillName"
+                    placeholder="Enter Skill name"
+                    type="text"
+                    id="skillName"
+                    className={`field ${errors.skillName ? "error" : ""}`}
+                  />
+                  <div className="skills-form__error">
+                    <ErrorMessage name="skillName" component="div" />
+                  </div>
+                </div>
+                <div className="skills-form__field">
+                  <label htmlFor="skillRange">Skill range</label>
+                  <Field
+                    name="skillRange"
+                    placeholder="Enter skill range"
+                    type="number"
+                    id="skillRange"
+                    className={`field ${errors.skillRange ? "error" : ""}`}
+                  />
+                  <div className="skills-form__error">
+                    <ErrorMessage name="skillRange" component="div" />
+                  </div>
+                </div>
+                <button
+                  type="submit"
+                  className={`skills-form__button ${
+                    isValid ? "valid-button" : "invalid"
+                  }`}
+                  disabled={!isValid}
+                >
+                  Add skill
+                </button>
+              </Form>
+            )}
+          </Formik>
+        )}
       </div>
-      {isContentVisible && (
-        <div className="skills-form__data">
-          {localData &&
-            localData.map((element) => {
-              const range = element?.skill?.range;
-              if (range !== undefined) {
+      <div className="skills-form__data">
+        {skills
+          ? skills.map((skill) => {
+              if (skill.isVisible) {
                 return (
-                  <div key={element.skill.id}>
+                  <div key={skill.id}>
                     <div
                       className="skills-form__name skills-form__range"
-                      style={{ width: `${range}%` }}
+                      style={{ width: `${skill.range}%` }}
                     >
-                      {element?.skill?.name}
+                      {skill.name}
+                      <button
+                        className="skills-close__click"
+                        onClick={() => handleClose(skill.id)}
+                      >
+                        <span className="close__click-icon">
+                          <FontAwesomeIcon icon={faXmark}></FontAwesomeIcon>
+                        </span>
+                      </button>
                     </div>
                   </div>
                 );
               }
               return null;
-            })}
-        </div>
-      )}
-
+            })
+          : null}
+      </div>
       <div className="skills-container">
         <table>
           <tbody>

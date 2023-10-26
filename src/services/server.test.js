@@ -1,6 +1,5 @@
-// server.test.js
 import { createServer, Model } from "miragejs";
-import { makeServer } from "./server"; // Import your makeServer function
+import { makeServer } from "./server";
 
 describe("MirageJS Server Tests", () => {
   let server;

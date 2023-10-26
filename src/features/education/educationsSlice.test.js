@@ -8,9 +8,7 @@ const mockStore = configureMockStore(middlewares);
 
 describe("educationSlice Async Actions", () => {
   it("should dispatch fetchEducation and handle success", async () => {
-    const expectedData = [
-      /* mocked education data */
-    ];
+    const expectedData = [];
     // Mocking axios to return a successful response
     axios.get = jest.fn(() => Promise.resolve({ data: expectedData }));
 

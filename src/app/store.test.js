@@ -19,10 +19,10 @@ describe("Redux Store", () => {
       },
       skills: {
         data: {
-          skills: {},
+          skills: [],
         },
         skillsIsOpen: false,
-        status: "loading",
+        status: "idle",
       },
     };
 
@@ -52,10 +52,10 @@ describe("Redux Store", () => {
       },
       skills: {
         data: {
-          skills: {},
+          skills: [],
         },
         skillsIsOpen: false,
-        status: "loading",
+        status: "idle",
       },
     };
 
@@ -85,10 +85,10 @@ describe("Redux Store", () => {
       },
       skills: {
         data: {
-          skills: {},
+          skills: [],
         },
         skillsIsOpen: false,
-        status: "loading",
+        status: "idle",
       },
     };
 

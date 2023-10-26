@@ -7,7 +7,7 @@ export const store = configureStore({
     educations: educationReducer,
     skills: skillsReducer,
   },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
+  // middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
 });
 
 export default store;
