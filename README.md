@@ -1,6 +1,41 @@
-# Getting Started with Create React App
+# CV App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**CV App** is a single-page application designed to help professionals showcase their skills and experiences effectively. This application leverages React, Redux, and React Router to offer a smooth and interactive user experience.
+
+## Features
+
+- **Single-Page Application**: Built with React Router for seamless navigation without page reloads.
+- **Shared Components**: Includes reusable UI components such as Box, Button, and Expertise to ensure a consistent design across the application.
+- **Portfolio**: Features a dynamic portfolio section with filtering capabilities, allowing users to showcase their work efficiently.
+- **Skills Management**: Users can add, visualize, and delete their skills with a dynamic form and visual proficiency levels.
+- **Responsive Design**: Ensures that the application is accessible and aesthetically pleasing on a variety of devices.
+
+## Technical Overview
+
+### Components
+
+- **Shared Components**: Designed to maintain uniformity and reduce redundancy. Components such as `Box`, `Button`, and `Expertise` are used throughout the application to keep the UI consistent.
+- **Timeline Component**: Manages the display of chronological events such as education or career milestones. This component is dynamic, loading external data and handling state.
+- **Skills Component**:
+  - Allows users to add and display skills.
+  - Features dynamic form management using Formik for adding skills with validation.
+  - Skills are stored in `localStorage` for persistence across sessions.
+
+### Redux Integration
+
+- **Data Management**: Uses Redux and Redux Toolkit for state management, encapsulating the lifecycle of asynchronous requests.
+- **Redux DevTools**: Integrated for monitoring state changes and assisting in debugging.
+- **Mock Server**: Utilizes Mirage JS to simulate API endpoints for a realistic development environment without the need for an actual backend.
+
+### Utilities
+
+- **Form Handling**: Utilizes Formik for managing form states and performing validations with detailed error messages.
+- **Error Handling**: Implements robust error handling across the application, ensuring that any data-fetching errors are gracefully managed.
+
+### Testing
+
+- **Unit Testing**: Uses Jest alongside React Testing Library to write and execute tests for components and utility functions.
+- **Code Quality**: Configured Jest to enforce coverage thresholds, integrated with Husky for running tests pre-commit to maintain high code standards.
 
 ## Available Scripts
 
