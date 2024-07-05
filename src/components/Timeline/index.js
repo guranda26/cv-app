@@ -34,7 +34,7 @@ const Timeline = () => {
             </div>
           )}
           {status === "success" &&
-          Array.isArray(data.educations) &&
+          Array.isArray(data?.educations) &&
           data.educations.length > 0 ? (
             data.educations.map((event, index) => (
               <div className="education__timeline-event" key={index}>
@@ -47,7 +47,9 @@ const Timeline = () => {
                 </div>
               </div>
             ))
-          ) : status === "success" && data.educations.length === 0 ? (
+          ) : status === "success" &&
+            Array.isArray(data?.educations) &&
+            data.educations?.length === 0 ? (
             <div className="error-message">No education data available.</div>
           ) : null}
         </div>
