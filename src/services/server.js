@@ -29,25 +29,17 @@ export function makeServer() {
     },
 
     routes() {
-      this.namespace = "api";
+      this.namespace = "/api";
 
-      this.get(
-        "educations",
-        (schema) => {
-          return schema.educations.all();
-        },
-        { timing: 3000 }
-      );
+      this.get("/educations", (schema) => {
+        return schema.educations.all();
+      });
 
-      this.get(
-        "skills",
-        (schema) => {
-          return schema.skills.all();
-        },
-        { timing: 3000 }
-      );
+      this.get("/skills", (schema) => {
+        return schema.skills.all();
+      });
 
-      this.post("skills", (schema, request) => {
+      this.post("/skills", (schema, request) => {
         const { name, range } = JSON.parse(request.requestBody);
         const skill = schema.skills.create({ name, range });
         return skill;

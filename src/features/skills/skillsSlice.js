@@ -27,7 +27,7 @@ export const storeSkills = (skills, isNewSkills = false) => {
 // Fetching skills from the API
 export const fetchSkills = createAsyncThunk("content/fetchSkills", async () => {
   try {
-    const res = await axios("api/skills");
+    const res = await axios("/api/skills");
     console.log("API Response:", res);
     const skills = await res.data;
     console.log("Fetched skills:", skills);
@@ -43,7 +43,7 @@ export const postSkills = createAsyncThunk(
   async (data) => {
     try {
       const { skillName, skillRange } = data;
-      const res = await axios.post("api/skills", {
+      const res = await axios.post("/api/skills", {
         name: skillName,
         range: skillRange,
       });
