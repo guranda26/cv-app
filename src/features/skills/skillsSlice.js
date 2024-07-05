@@ -94,17 +94,23 @@ const skillsSlice = createSlice({
     });
 
     builder.addCase(postSkills.fulfilled, (state, action) => {
-      const { id, name, range } = action.payload.skill;
+      const payload = action.payload;
 
-      const newSkill = {
-        id: uuidv4(),
-        name,
-        range,
-        isVisible: true,
-      };
+      if (payload && payload.skill) {
+        const { name, range } = payload.skill;
 
-      state.data.skills.push(newSkill);
-      localStorage.setItem("skills", JSON.stringify(state.data.skills));
+        const newSkill = {
+          id: uuidv4(),
+          name,
+          range,
+          isVisible: true,
+        };
+
+        state.data.skills.push(newSkill);
+        localStorage.setItem("skills", JSON.stringify(state.data.skills));
+      } else {
+        console.error("Unexpected payload structure:", payload);
+      }
     });
   },
 });
