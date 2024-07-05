@@ -47,9 +47,7 @@ const Timeline = () => {
                 </div>
               </div>
             ))
-          ) : status === "success" &&
-            Array.isArray(data?.educations) &&
-            data.educations?.length === 0 ? (
+          ) : status === "success" && data.educations?.length === 0 ? (
             <div className="error-message">No education data available.</div>
           ) : null}
         </div>
