@@ -1,5 +1,4 @@
 import React from "react";
-import { useState, useEffect } from "react";
 import About from "../../components/Box/index";
 import { Timeline } from "../../components/Timeline/index";
 import { Skills } from "../../components/Skills";

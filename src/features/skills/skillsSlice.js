@@ -26,9 +26,16 @@ export const storeSkills = (skills, isNewSkills = false) => {
 
 // Fetching skills from the API
 export const fetchSkills = createAsyncThunk("content/fetchSkills", async () => {
-  const res = await axios("api/skills");
-  const skills = await res.data;
-  return skills;
+  try {
+    const res = await axios("api/skills");
+    console.log("API Response:", res);
+    const skills = await res.data;
+    console.log("Fetched skills:", skills);
+    return skills;
+  } catch (err) {
+    console.error("Fetch skills failed:", err.message);
+    throw err;
+  }
 });
 
 export const postSkills = createAsyncThunk(
@@ -90,27 +97,25 @@ const skillsSlice = createSlice({
 
     builder.addCase(fetchSkills.rejected, (state, action) => {
       state.status = "error";
-      state.error = action.error.message;
+      state.error = action.error.message || "Failed to fetch skills.";
+      console.error("Fetch skills failed:", action.error.message);
     });
 
     builder.addCase(postSkills.fulfilled, (state, action) => {
-      const payload = action.payload;
+      console.log(action.payload.skill);
 
-      if (payload && payload.skill) {
-        const { name, range } = payload.skill;
+      const { name, range } = action.payload.skill;
+      console.log(name, range);
 
-        const newSkill = {
-          id: uuidv4(),
-          name,
-          range,
-          isVisible: true,
-        };
+      const newSkill = {
+        id: uuidv4(),
+        name,
+        range,
+        isVisible: true,
+      };
 
-        state.data.skills.push(newSkill);
-        localStorage.setItem("skills", JSON.stringify(state.data.skills));
-      } else {
-        console.error("Unexpected payload structure:", payload);
-      }
+      state.data.skills.push(newSkill);
+      localStorage.setItem("skills", JSON.stringify(state.data.skills));
     });
   },
 });
