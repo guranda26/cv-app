@@ -28,9 +28,7 @@ export const storeSkills = (skills, isNewSkills = false) => {
 export const fetchSkills = createAsyncThunk("content/fetchSkills", async () => {
   try {
     const res = await axios("/api/skills");
-    console.log("API Response:", res);
     const skills = await res.data;
-    console.log("Fetched skills:", skills);
     return skills;
   } catch (err) {
     console.error("Fetch skills failed:", err.message);
